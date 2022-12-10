@@ -28,7 +28,7 @@ const Home = () => {
                     </button>
                 </div>
             </section>
-            <section className='tickets_area'>
+            <section className='tickets_area mt-5'>
                 <Movies />
             </section>
         </div>
