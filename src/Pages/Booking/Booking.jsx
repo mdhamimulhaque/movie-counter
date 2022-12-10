@@ -4,8 +4,10 @@ import './Booking.css';
 import { HiOutlineX } from "react-icons/hi";
 
 const Booking = ({ handleModalClose, movieShow }) => {
-    const { averageRuntime, premiered, officialSite, ended, name,
-        type, language, image, schedule, status, summary } = movieShow;
+
+    const localData = JSON.parse(localStorage.getItem('movieShow'));
+    const { name, type, language, image, status, } = localData;
+
     return (
         <div className='booking_wrapper row d-flex justify-content-center align-items-center'>
             <div className="col-12 col-md-7 col-lg-4 form_wrapper">

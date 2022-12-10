@@ -29,7 +29,7 @@ const MovieDetails = () => {
     // --->handle modal open
     const handleModalOpen = () => {
         setIsModalOpen(true)
-        localStorage.setItem('movieShow', movieShow)
+        localStorage.setItem('movieShow', JSON.stringify(movieShow))
     }
 
     // ---> handle modal close
