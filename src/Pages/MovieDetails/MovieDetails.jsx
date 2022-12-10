@@ -7,7 +7,7 @@ import './MovieDetails.css';
 
 const MovieDetails = () => {
     const params = useParams();
-    const [isModalOpen, setIsModalOpen] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const { data: MoviesData = [], isLoading } = useQuery({
         queryKey: ['shows'],
         queryFn: async () => {
@@ -28,7 +28,8 @@ const MovieDetails = () => {
 
     // --->handle modal open
     const handleModalOpen = () => {
-        setIsModalOpen(!isModalOpen)
+        setIsModalOpen(true)
+        localStorage.setItem('movieShow', movieShow)
     }
 
     // ---> handle modal close

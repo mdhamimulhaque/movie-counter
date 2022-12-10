@@ -35,7 +35,7 @@ const Booking = ({ handleModalClose, movieShow }) => {
                     </div>
 
                     <Link className='text-decoration-none btn btn-warning text-white my-2' >
-                        Booking
+                        Booking Now
                     </Link>
                 </form>
             </div>
