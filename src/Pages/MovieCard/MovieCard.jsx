@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import '../MovieCard/MovieCard.css'
 
 const MovieCard = ({ movies }) => {
-    const { id, averageRuntime, premiered, officialSite, ended, name,
-        type, language, image, schedule, status, summary, runtime, url } = movies?.show;
-    console.log(movies)
+    const { id, name, type, language, image } = movies?.show;
     return (
         <div class="movie_card mb-4 p-2" >
 
@@ -14,9 +12,13 @@ const MovieCard = ({ movies }) => {
             </div>
 
             <div class="movie_basic_info ">
-                <h6 className='movie_name pb-0 pt-0'>{name}</h6>
+                <h5 className='movie_name pb-0 pt-0'>{name}</h5>
+                <div>
+                    <small>Type: {type}</small> <br />
+                    <small>Language: {language}</small>
+                </div>
             </div>
-            <Link className='text-decoration-none' to={`/movie-details/${id}`}>
+            <Link className='text-decoration-none btn btn-warning text-white d-block my-2' to={`/movie-details/${id}`}>
                 Details
             </Link>
         </div>
