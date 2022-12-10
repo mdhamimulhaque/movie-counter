@@ -15,3 +15,7 @@
 .close_modal {
     cursor: pointer;
 }
+
+.submit_btn {
+    z-index: 20;
+}

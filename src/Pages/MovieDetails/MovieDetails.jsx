@@ -29,7 +29,6 @@ const MovieDetails = () => {
     // --->handle modal open
     const handleModalOpen = () => {
         setIsModalOpen(true)
-        localStorage.setItem('movieShow', JSON.stringify(movieShow))
     }
 
     // ---> handle modal close
@@ -41,13 +40,13 @@ const MovieDetails = () => {
     return (
         <div className="row">
             <div className="col-12 col-lg-7 mx-auto mt-5">
-                <div class="card mb-3 card_details">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src={image?.original} class="img-fluid rounded-start" alt="img" />
+                <div className="card mb-3 card_details">
+                    <div className="row g-0">
+                        <div className="col-md-4">
+                            <img src={image?.original} className="details_img img-fluid rounded-start" alt="img" />
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
+                        <div className="col-md-8">
+                            <div className="card-body">
                                 <h5 className='movie_name pb-0 pt-0'>{name}</h5>
                                 <span>Movie Type : {type ? type : "type not set"}</span> <br />
                                 <small>Language : {language ? language : "language not set"}</small> <br />
@@ -66,7 +65,7 @@ const MovieDetails = () => {
                                 </Link>
                             </div>
                         </div>
-                        <p class="card-text p-3"><strong>Details : </strong>{summary}</p>
+                        <p className="card-text p-3"><strong>Details : </strong>{summary}</p>
                     </div>
                 </div>
 
