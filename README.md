@@ -1,5 +1,5 @@
 # Name : Movie Counter
-Live : [movie counter](https://chipper-pie-452901.netlify.app/).
+Live : [movie counter](https://movie-counter.netlify.app/).
 
 Tools:
 <li>React Js</li>
