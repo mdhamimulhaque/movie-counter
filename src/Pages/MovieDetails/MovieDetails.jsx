@@ -1,11 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Loading from '../../components/Loading/Loading';
+import Booking from '../Booking/Booking';
 import './MovieDetails.css';
 
 const MovieDetails = () => {
     const params = useParams();
+    const [isModalOpen, setIsModalOpen] = useState(true);
     const { data: MoviesData = [], isLoading } = useQuery({
         queryKey: ['shows'],
         queryFn: async () => {
@@ -23,6 +25,17 @@ const MovieDetails = () => {
     const movieShow = movie[0]?.show;
     const { averageRuntime, premiered, officialSite, ended, name,
         type, language, image, schedule, status, summary } = movieShow;
+
+    // --->handle modal open
+    const handleModalOpen = () => {
+        setIsModalOpen(!isModalOpen)
+    }
+
+    // ---> handle modal close
+    const handleModalClose = () => {
+        setIsModalOpen(false)
+    }
+
 
     return (
         <div className="row">
@@ -45,15 +58,29 @@ const MovieDetails = () => {
                                 <small>Status : {status ? status : 'No status set'}</small><br />
                                 <small>Ended : {ended ? ended : 'No ended set yet'}</small><br />
                                 <small>Official Site : {officialSite ? officialSite : 'official site not available'}</small><br />
-                                <Link className='text-decoration-none btn btn-warning text-white my-2'>
-                                    Buy A Ticket
+                                <Link className='text-decoration-none btn btn-warning text-white my-2'
+                                    onClick={handleModalOpen}
+                                >
+                                    Book a Movie Ticket
                                 </Link>
                             </div>
                         </div>
                         <p class="card-text p-3"><strong>Details : </strong>{summary}</p>
                     </div>
                 </div>
+
             </div>
+
+            {/* booking form modal */}
+            {
+                isModalOpen &&
+                <div className="booking_modal_area">
+                    <Booking
+                        handleModalClose={handleModalClose}
+                        movieShow={movieShow}
+                    />
+                </div>
+            }
         </div>
     );
 };

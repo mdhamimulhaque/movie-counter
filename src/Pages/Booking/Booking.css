@@ -1,0 +1,17 @@
+.booking_wrapper {
+    height: 100%;
+}
+
+.form_wrapper {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.form_wrapper img {
+    height: 150px;
+    width: 120px;
+}
+
+.close_modal {
+    cursor: pointer;
+}
